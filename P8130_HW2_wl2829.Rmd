@@ -17,8 +17,14 @@ pbinom(23, size = 40, prob = 0.65, lower.tail = FALSE)
 ## problem 1 (c)
 ### p = 0.65, q = 1 - 0.65 = 0.35, np > 5 and nq > 5, so we can use normal approximation to calcualte the probabilities. By using the continuity correction factor, we can use P(n-0.5<X<n+0.5) to replace P(X=n), P(X>n-0.5) to replace P(X>=n).
 ```{r}
-
+### problem 1 (a)
+pbinom(23.5, size = 40, prob = 0.65, lower.tail = FALSE)-pbinom(24.5, size = 40, prob = 0.65, lower.tail = FALSE)
+### problem 1 (b)
+pbinom(23.5, size = 40, prob = 0.65, lower.tail = FALSE)
 ```
+### The approximation answer is equal to the original probabilities.
+
+
 ## Problem 1 (d)
 ### The expectation E is equal to
 ```{r echo = TRUE}
@@ -36,19 +42,19 @@ sigma_sq
 # Problem 2
 ## Problem 2 (a)
 ```{r}
-Lessthan3 = ppois(2, 7, lower.tail = TRUE)
+Lessthan3 = ppois(2, 7, lower.tail = TRUE) # the probability of having fewer than 3 tornados
 Lessthan3
 ```
 
 ## Problem 2 (b)
 ```{r}
-equalto3 = dpois(3, 7, log = FALSE)
+equalto3 = dpois(3, 7, log = FALSE) # the probability of having exactly 3 tornados
 equalto3
 ```
 
 ## Problem 2 (c)
 ```{r}
-morethan3 = ppois(3, 7, lower.tail = FALSE)
+morethan3 = ppois(3, 7, lower.tail = FALSE) # the probability of having more than 3 tornados
 morethan3
 ```
 
