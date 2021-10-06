@@ -1,0 +1,89 @@
+---
+title: "P8130_HW2_wl2829"
+author: "Wentong"
+date: "10/6/2021"
+output: pdf_document
+---
+
+# Problem 1
+## Problem 1 (a)(b)
+```{r echo = TRUE}
+## problem 1 (a)
+dbinom(24, size = 40, prob = 0.65)
+
+## problem 1 (b)
+pbinom(23, size = 40, prob = 0.65, lower.tail = FALSE)
+```
+## problem 1 (c)
+### p = 0.65, q = 1 - 0.65 = 0.35, np > 5 and nq > 5, so we can use normal approximation to calcualte the probabilities. By using the continuity correction factor, we can use P(n-0.5<X<n+0.5) to replace P(X=n), P(X>n-0.5) to replace P(X>=n).
+```{r}
+
+```
+## Problem 1 (d)
+### The expectation E is equal to
+```{r echo = TRUE}
+Expectation = np = 40 * 0.65
+Expectation
+```
+## Problem 1 (e)
+```{r}
+sigma_sq = sqrt(40 * 0.65 * 0.35)
+sigma_sq
+```
+### The SD is `r sigma_sq`.
+
+
+# Problem 2
+## Problem 2 (a)
+```{r}
+Lessthan3 = ppois(2, 7, lower.tail = TRUE)
+Lessthan3
+```
+
+## Problem 2 (b)
+```{r}
+equalto3 = dpois(3, 7, log = FALSE)
+equalto3
+```
+
+## Problem 2 (c)
+```{r}
+morethan3 = ppois(3, 7, lower.tail = FALSE)
+morethan3
+```
+
+# Problem 3
+## Problem 3 (a)
+```{r}
+above137 = pnorm(137, mean = 132, sd = 9.8, lower.tail = FALSE)
+above137
+```
+## Problem 3 (b)
+```{r}
+lessthan129 = pnorm(129, mean = 132, sd = 9.8, lower.tail = TRUE)
+lessthan129
+```
+## Problem 3 (c)
+```{r}
+sample = rnorm(40, 132, 9.8)
+quantile(sample, 0.9)
+```
+
+# Problem 4
+## Problem 4 (a)
+```{r}
+## sample mean = 75, sd = 8, sample size = 30
+error = qnorm(0.975) * 8 / sqrt(30)
+lower = 75 - error
+upper = 75 + error
+c(lower, upper)
+```
+## Problem 4 (b)
+### We are 95% confident that the population parameter is between `r lower` and `r upper`.
+
+## Problem 4 (c)
+### Yes, we don't need to do extra calculation to reject H0, because the 95% confidence interval is between `r lower` and `r upper`, which does not contain "70". Therefore, the null hypothesis µ = µ0 is rejected.
+
+
+
+
