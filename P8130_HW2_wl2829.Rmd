@@ -6,32 +6,53 @@ output: pdf_document
 ---
 
 # Problem 1
-## Problem 1 (a)(b)
-```{r echo = TRUE}
-## problem 1 (a)
-dbinom(24, size = 40, prob = 0.65)
+## Problem 1 (a)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-## problem 1 (b)
+```{r echo = TRUE}
+dbinom(24, size = 40, prob = 0.65)
+```
+## Problem 1 (b)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+```{r}
 pbinom(23, size = 40, prob = 0.65, lower.tail = FALSE)
 ```
+
+
 ## problem 1 (c)
 ### p = 0.65, q = 1 - 0.65 = 0.35, np > 5 and nq > 5, so we can use normal approximation to calcualte the probabilities. By using the continuity correction factor, we can use P(n-0.5<X<n+0.5) to replace P(X=n), P(X>n-0.5) to replace P(X>=n).
 ```{r}
-### problem 1 (a)
-pbinom(23.5, size = 40, prob = 0.65, lower.tail = FALSE)-pbinom(24.5, size = 40, prob = 0.65, lower.tail = FALSE)
-### problem 1 (b)
-pbinom(23.5, size = 40, prob = 0.65, lower.tail = FALSE)
+### the approximation of problem 1 (a)
+pnorm(24.5, mean = 26, sd = sqrt(9.1))-pnorm(23.5, mean = 26, sd = sqrt(9.1))
+### the approximation of problem 1 (b)
+1 - pnorm(23.5, mean = 26, sd = sqrt(9.1))
 ```
-### The approximation answer is equal to the original probabilities.
+### The approximation answer is close but not equal to the original probabilities. 
 
 
 ## Problem 1 (d)
+&nbsp;
+&nbsp;
+
 ### The expectation E is equal to
 ```{r echo = TRUE}
 Expectation = np = 40 * 0.65
 Expectation
 ```
 ## Problem 1 (e)
+&nbsp;
+&nbsp;
+
 ```{r}
 sigma_sq = sqrt(40 * 0.65 * 0.35)
 sigma_sq
@@ -41,18 +62,36 @@ sigma_sq
 
 # Problem 2
 ## Problem 2 (a)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
 ```{r}
 Lessthan3 = ppois(2, 7, lower.tail = TRUE) # the probability of having fewer than 3 tornados
 Lessthan3
 ```
 
 ## Problem 2 (b)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
 ```{r}
 equalto3 = dpois(3, 7, log = FALSE) # the probability of having exactly 3 tornados
 equalto3
 ```
 
 ## Problem 2 (c)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
 ```{r}
 morethan3 = ppois(3, 7, lower.tail = FALSE) # the probability of having more than 3 tornados
 morethan3
@@ -60,23 +99,44 @@ morethan3
 
 # Problem 3
 ## Problem 3 (a)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
 ```{r}
 above137 = pnorm(137, mean = 132, sd = 9.8, lower.tail = FALSE)
 above137
 ```
 ## Problem 3 (b)
-```{r}
-lessthan129 = pnorm(129, mean = 132, sd = 9.8, lower.tail = TRUE)
-lessthan129
-```
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## Problem 3 (c)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
 ```{r}
-sample = rnorm(40, 132, 9.8)
-quantile(sample, 0.9)
+qnorm(0.9, mean = 132, sd = 9.8/sqrt(40))  ## the 90 quantile of the sampling distribution
 ```
+
 
 # Problem 4
 ## Problem 4 (a)
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
 ```{r}
 ## sample mean = 75, sd = 8, sample size = 30
 error = qnorm(0.975) * 8 / sqrt(30)
